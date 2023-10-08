@@ -1,0 +1,153 @@
+.grid {
+    background-color: #eee;
+    margin: 20px auto;
+    width: 600px;
+    height: 600px;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 40px;
+    position: relative;
+}
+.bl {
+    display: grid;
+    position: relative;
+    height: 400px;
+    width: 200px;
+    background-color: #eee;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas: "sd hd hd hd" "sd videe videe videe" "sd videe videe videe" "sd con con con" "sd vidaa vidaa vidaa" "sd vidaa vidaa vidaa" "sd ft ft ft";
+}
+.side {
+    grid-area: sd;
+    background-color: black;
+}
+.videe {
+    grid-area: videe;
+    background-color: #eee;
+}
+.vidaa {
+    grid-area: vidaa;
+    background-color: #eee;
+}
+.head {
+    grid-area: hd;
+    background-color: black;
+}
+.foot {
+    grid-area: ft;
+    background-color: black;
+}
+.con {
+    grid-area: con;
+    background-color: black;
+}
+.tr {
+    position: absolute;
+    right: 40px; top: 40px;
+    display: grid;
+    height: 400px;
+    width: 200px;
+    background-color: #eee;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas: " sdr cont cont cont" "sdr cont cont cont " "sdr cont cont cont " "sdr cont cont cont " "sdr cont cont cont " "sdr cont cont cont " "sdr ftr ftr ftr";
+}
+.cont {
+    grid-area: cont;
+    background-color: #eee;
+}
+.sider {
+    grid-area: sdr;
+    background-color: black;
+}
+.footer {
+    grid-area: ftr;
+    background-color: black;
+}
+.move {
+    background-color: orange;
+    height: 20px;
+    width: 20px;
+    position: absolute; right: 10px; bottom: 20px;
+    animation-name: mover;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    
+
+}
+.deplace {
+    background-color: orange;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 10px; top: 20px;
+    animation-name: deplacer;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+
+@keyframes mover {
+    0% {
+        transform: translate(0px, 0px);
+     
+    }
+    10% {
+        transform: translate(-150px, 0px);
+      
+    }
+    20% {
+        transform: translate(-150px, -350px);
+        
+    }
+    33% {
+        transform: translate(-150px, -350px);  
+    }
+    100% {
+        transform: translate(-150px, -350px);
+        background-color: transparent;
+    } 
+
+
+}
+@keyframes deplacer {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    5% {
+        transform: translate(-160px, 0px);
+    }
+    15% {
+        transform: translate(-160px, 170px);
+    }
+    20% {
+        transform: translate(0px, 170px);
+    }
+    25% {
+        transform: translate(-160px, 170px);
+    }
+    30% {
+        transform: translate(-160px, 360px);
+    }
+    35% {
+        transform: translate(0px, 360px);
+    }
+    40% {
+        transform: translate(-160px, 360px);
+    }
+    45% {
+        transform: translate(-160px, 0px);
+    }
+    50% {
+        transform: translate(0px, 0px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+
+
+
+}
